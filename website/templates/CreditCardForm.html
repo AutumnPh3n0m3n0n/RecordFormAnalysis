@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content %}
+
+<a href="{{url_for('auth.forms')}}" target="_blank">Go Back To Forms</a> <br><br>
+
+<body>
+
+    <img src="../static/FirstTech.png" alt="FirstTech" width="1000" height="300" />
+
+    <form method="POST">
+        <h3>Enter your information</h3>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <label for="account_num">Account Number:</label>
+        <input type="text" id="account_num" name="account_num"><br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+        <input type="radio" id="new_auth" name="credit_auth" value="New Authorization">
+        <label for="new_auth">New authorization</label><br>
+        <input type="radio" id="current_auth" name="credit_auth" value="Change Current Authorization">
+        <label for="current_auth">Change current authorization</label><br><br>
+
+        <h3>Please debit my monthly payment from my account listed below:</h3>
+        <p>
+            This form must be received at least 10 business days prior to payment date for this automatic payment to go
+            into effect. Changes may not take effect
+            until the following payment cycle (up to 45 days) from when the signed form is received by Payment Services.
+        </p>
+        Checking:<input type="checkbox" value="3" name="Part2"><br>
+        <label for="checking_acc_num">Checking account number:</label>
+        <input type="text" id="checking_acc_num" name="checking_acc_num">
+        <label for="checking_aba_num">Checking ABA (Routing) Number:</label>
+        <input type="text" id="checking_aba_num" name="checking_aba_num"><br>
+        <label for="checking_start_month">Month to begin:</label>
+        <input type="text" id="checking_start_month" name="checking_start_month"><br>
+        Savings:<input type="checkbox" value="4" name="Part2">
+        <label for="saving_acc_num">Savings account number:</label>
+        <input type="text" id="saving_acc_num" name="saving_acc_num">
+        <label for="saving_aba_num">Savings ABA (Routing) Number:</label>
+        <input type="text" id="saving_aba_num" name="saving_aba_num"><br>
+        <label for="saving_start_month">Month to begin:</label>
+        <input type="text" id="saving_start_month" name="saving_start_month"><br>
+
+        <h3>Please review the due date of your next payment. You may need to make a manual payment.</h3>
+        <input type="radio" id="full_balance" name="payments" value="Full Balance Payment">
+        <label for="full_balance">Full Balance Payment</label><br>
+        <input type="radio" id="minimum_pay" name="payments" value="Minimum Payment">
+        <label for="minimum_pay">Minimum Payment</label><br>
+        <input type="radio" id="fixed_amount" name="payments" value="Fixed Amount">
+        <label for="fixed_amount">Fixed Amount</label><br>
+        <label for="amount">$:</label>
+        <input type="text" id="amount" name="amount"><br>
+
+        <p>
+            I/We hereby authorize First Technology Federal Credit Union ("Credit Union"), along with their third party
+            service provider, to originate ACH credit entries to my credit card account as indicated above. This
+            authorization is to remain in full force and effect until the Credit Union has received written notification
+            from me of its termination in such manner as to afford the Credit Union a reasonable opportunity to act on it
+            (no less than 10 days prior to transfer date). I/We acknowledge that our origination of ACH entries under this
+            agreement must comply with United States law. I/We understand the payment will be deducted on the 25th day after
+            statement close and reoccurring monthly thereafter.
+        </p>
+
+        <label for="signature">Signature:</label>
+        <input type="text" id="signature" name="signature"><br>
+        <label for="get_date">Date:</label>
+        <input type="text" id="get_date" name="get_date"><br />
+
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+
+    </form>
+
+    <img src="../static/FirstTech_Conclusion.png" alt="FirstTech" width="1000" height="750" />
+</body>
+{% endblock %}

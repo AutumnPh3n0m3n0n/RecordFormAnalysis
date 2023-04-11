@@ -1,0 +1,92 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content %}
+
+<a href="{{url_for('auth.forms')}}" target="_blank">Go Back To Forms</a> <br><br>
+
+<body>
+    <img src="../static/Vanguard.png" alt="Vanguard_1" width="900" height="600" />
+
+    <form method ="POST">
+        <p>PART 1: Account owner information</p>
+        <label for="account_num">Vanguard Brokerage Account Number:</label>
+        <input type="text" id="account_num" name="account_num"><br>
+
+        <label for="owner_fname">Owner First Name:</label>
+        <input type="text" id="owner_fname" name="owner_fname">
+        <label for="owner_mid_initial">Owner Middle Initial:</label>
+        <input type="text" id="owner_mid_initial" name="owner_mid_initial">
+        <label for="owner_lname">Owner Last Name:</label>
+        <input type="text" id="owner_lname" name="owner_lname"><br><br>
+
+        <label for="joint_owner_fname">Joint Owner First Name:</label>
+        <input type="text" id="joint_owner_fname" name="joint_owner_fname">
+        <label for="joint_owner_mid_initial">Joint Owner Middle Initial:</label>
+        <input type="text" id="joint_owner_mid_initial" name="joint_owner_mid_initial">
+        <label for="joint_owner_lname">Joint Owner Last Name:</label>
+        <input type="text" id="joint_owner_lname" name="joint_owner_lname"><br><br>
+
+        <label for="company_name">Name of corporation, partnership, trust, or other entity (if applicable):</label>
+        <input type="text" id="company_name" name="company_name"><br><br>
+        <label for="authorized_person_name">Name and title of authorized person (if an entity):</label>
+        <input type="text" id="authorized_person_name" name="authorized_person_name">
+        <label for="other_authorized_person_name">Name and title of other authorized person (if an entity):</label>
+        <input type="text" id="other_authorized_person_name" name="other_authorized_person_name"><br><br>
+
+        <p>PART 2: Account owner financial information</p>
+        <p>Approximate annual income. Include ALL sources.</p>
+        <input type="radio" id="annual_income1" name="annual_income" value="Less than $20000">
+        <label for="annual_income1">Less than $20000</label><br>
+        <input type="radio" id="annual_income2" name="annual_income" value="$20,000–$49,999">
+        <label for="annual_income2">$20,000–$49,999</label><br>
+        <input type="radio" id="annual_income3" name="annual_income" value="$50,000–$74,999">
+        <label for="annual_income3">$50,000–$74,999</label><br>
+        <input type="radio" id="annual_income4" name="annual_income" value="$75,000–$99,999">
+        <label for="annual_income4">$75,000–$99,999</label><br>
+        <input type="radio" id="annual_income5" name="annual_income" value="$100,000–$499,999">
+        <label for="annual_income5">$100,000–$499,999</label><br>
+        <input type="radio" id="annual_income6" name="annual_income" value="$500,000 or more">
+        <label for="annual_income6">$500,000 or more</label><br><br>
+
+        <p>Liquid net worth. Cash, securities, etc.</p>
+        <input type="radio" id="liquid_nw_1" name="liquid_net_worth" value="Less than $20000">
+        <label for="liquid_nw_1">Less than $20000</label><br>
+        <input type="radio" id="liquid_nw_2" name="liquid_net_worth" value="$20,000–$49,999">
+        <label for="liquid_nw_2">$20,000–$49,999</label><br>
+        <input type="radio" id="liquid_nw_3" name="liquid_net_worth" value="$50,000–$74,999">
+        <label for="liquid_nw_3">$50,000–$74,999</label><br>
+        <input type="radio" id="liquid_nw_4" name="liquid_net_worth" value="$75,000–$99,999">
+        <label for="liquid_nw_4">$75,000–$99,999</label><br>
+        <input type="radio" id="liquid_nw_5" name="liquid_net_worth" value="$100,000–$499,999">
+        <label for="liquid_nw_5">$100,000–$499,999</label><br>
+        <input type="radio" id="liquid_nw_6" name="liquid_net_worth" value="$500,000 or more">
+        <label for="liquid_nw_6">$500,000 or more</label><br><br>
+
+        <p>Total net worth. Exclude primary residence.</p>
+        <input type="radio" id="total_nw_1" name="total_net_worth" value="Less than $20000">
+        <label for="total_nw_1">Less than $20000</label><br>
+        <input type="radio" id="total_nw_2" name="total_net_worth" value="$20,000–$49,999">
+        <label for="total_nw_2">$20,000–$49,999</label><br>
+        <input type="radio" id="total_nw_3" name="total_net_worth" value="$50,000–$74,999">
+        <label for="total_nw_3">$50,000–$74,999</label><br>
+        <input type="radio" id="total_nw_4" name="]total_net_worth" value="$75,000–$99,999">
+        <label for="total_nw_4">$75,000–$99,999</label><br>
+        <input type="radio" id="total_nw_5" name="total_net_worth" value="$100,000–$499,999">
+        <label for="total_nw_5">$100,000–$499,999</label><br>
+        <input type="radio" id="total_nw_6" name="total_net_worth" value="$500,000 or more">
+        <label for="total_nw_6">$500,000 or more</label><br><br>
+
+        <p>PART 3: Authorization of account owner</p>
+        <label for="owner_signature1">Signature of owner, custodian, trustee, or organization representative:</label>
+        <input type="text" id="owner_signature1" name="owner_signature1"><br>
+        <label for="get_date_1">Date (mm/dd/yyyy)</label>
+        <input type="text" id="get_date_1" name="get_date_1"><br>
+        <label for="owner_signature2">Signature of owner, custodian, trustee, or organization representative</label>
+        <input type="text" id="owner_signature2" name="owner_signature2"><br>
+        <label for="get_date_2">Date (mm/dd/yyyy)</label>
+        <input type="text" id="get_date_2" name="get_date_2"><br>
+
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+    </form>
+
+    <img src="../static/Vanguard_Mailing.png" alt="Vanguard_2" width="900" height="600">
+</body>
+{% endblock %}

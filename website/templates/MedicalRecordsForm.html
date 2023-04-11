@@ -1,0 +1,152 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content %}
+
+<a href="{{url_for('auth.forms')}}" target="_blank">Go Back To Forms</a> <br><br>
+
+
+<body>
+    <img src="../static/LegacyHealth.png" alt="LegacyHealth_1" width="1000" height="250" />
+
+    <form method="POST">
+    <h3>PART 1: Enter your information</h3>
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname">
+    <label for="mid_initial">Middle Initial:</label>
+    <input type="text" id="mid_initial" name="mid_initial">
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone"><br><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br>
+
+    <label for="mail_address">Mailing Address:</label>
+    <input type="text" id="mail_address" name="mail_address"><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city">
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state">
+    <label for="zip_code">Zip Code:</label>
+    <input type="text" id="zip_code" name="zip_code"><br><br>
+
+    <label for="birthday">Please enter your birthday:</label>
+    <input type="text" id="birthday" name="birthday">
+    <label for="last_appt">When was the last time you had an appointment</label>
+    <input type="text" id="last_appt" name="last_appt">
+
+    <h3>PART 2: Information to be released from (Select only one location per complete form)</h3>
+    <input type="radio" id="location_1" name="Question2" value="LEGACY EMMANUEL MEDICAL CENTER">
+    <label for="location_1">LEGACY EMMANUEL MEDICAL CENTER (INCLUDING RANDALL CHILDRENS HOSPITAL)</label><br>
+    <input type="radio" id="location_2" name="Question2" value="LEGACY GOOD SAMARITAN MEDICAL CENTER">
+    <label for="location_2">LEGACY GOOD SAMARITAN MEDICAL CENTER (INCLUDING RIO)</label><br>
+    <input type="radio" id="location_3" name="Question2" value="LEGACY MERIDIAN PARK MEDICAL CENTER">
+    <label for="location_3">LEGACY MERIDIAN PARK MEDICAL CENTER</label><br>
+    <input type="radio" id="location_4" name="Question2" value="LEGACY SILVERTON PARK MEDICAL CENTER">
+    <label for="location_4">LEGACY SILVERTON PARK MEDICAL CENTER</label><br>
+    <input type="radio" id="location_5" name="Question2" value="LEGACY MT HOOD PARK MEDICAL CENTER">
+    <label for="location_5">LEGACY MT HOOD PARK MEDICAL CENTER</label><br>
+    <input type="radio" id="location_6" name="Question2" value="LEGACY SALMON CREEK MEDICAL CENTER">
+    <label for="location_6">LEGACY SALMON CREEK MEDICAL CENTER</label><br>
+    <input type="radio" id="location_7" name="Question2" value="LEGACY SILVERTON PARK MEDICAL CENTER">
+    <label for="location_7">LEGACY SILVERTON PARK MEDICAL CENTER</label><br>
+    <input type="radio" id="location_8" name="Question2" value="LEGACY MEDICAL GROUP">
+    <label for="location_8">LEGACY MEDICAL GROUP (SPECIFY CLINIC BELOW)</label><br>
+    <input type="radio" id="location_9" name="Question2" value="LEGACY HEALTH PROVIDER">
+    <label for="location_9">LEGACY HEALTH PROVIDER(S) (SPECIFY BELOW)</label><br>
+    <label for="get_location">Please specify clinic if you marked the bottom two options:</label>
+    <input type="text" id="get_location" name="get_location"><br><br>
+
+    <h3>PART 3: Information to be Released</h3>
+        Emergency Dept Records<input type="checkbox" value="Emergency Dept Records" name="Question3"><br>
+        Discharge Summaries<input type="checkbox" value="Discharge Summaries" name="Question3"><br>
+        History & Physical Reports<input type="checkbox" value="History & Physical Reports" name="Question3"><br>
+        Hospital Progress Notes<input type="checkbox" value="Hospital Progress Notes" name="Question3"><br>
+        Immunizations<input type="checkbox" value="Immunizations" name="Question3"><br>
+        Lab/Pathology Reports<input type="checkbox" value="Lab/Pathology Reports" name="Question3"><br>
+        Radiology Reports<input type="checkbox" value="Radiology Reports" name="Question3"><br>
+        Radiology Images (only available on disc)<input type="checkbox" value="Radiology Images" name="Question3"><br>
+        LMG Clinic Notes<input type="checkbox" value="LMG Clinic Notes" name="Question3"><br>
+        Billing Records<input type="checkbox" value="Billing Records" name="Question3"><br>
+        Other (please specify below)<input type="checkbox" value="Other" name="Question3"><br>
+        <label for="info">Please specify is selected Other:</label>
+        <input type="text" id="info" name="info"><br><br>
+
+    <h3>PART 4: Format of Records (Select One)</h3>
+    <input type="radio" id="format_1" name="Question4" value="EMail">
+    <label for="format_1">Email</label><br>
+    <input type="radio" id="format_2" name="Question4" value="MyHealth">
+    <label for="format_2">MyHealth (Active MyHealth account required)</label><br>
+    <input type="radio" id="format_3" name="Question4" value="CD">
+    <label for="format_3">CD (Only PC compatible)</label><br>
+    <input type="radio" id="format_4" name="Question4" value="DVD">
+    <label for="format_4">DVD (Only PC compatible)</label><br>
+    <input type="radio" id="format_5" name="Question4" value="Paper">
+    <label for="format_5">Paper</label><br><br>
+
+     <h3>PART 5: My rights</h3>
+        Mental health information and/or records (Oregon only)<input type="checkbox" value="Mental health information and/or records" name="Question5"><br>
+        Genetic testing information and/or records (Oregon only)<input type="checkbox" value="Genetic testing information and/or records" name="Question5"><br>
+        HIV-positive test results and HIV diagnosis<input type="checkbox" value="HIV-positive test results and HIV diagnosis" name="Question5"><br>
+        Other sexually transmitted diseases (Washington only)<input type="checkbox" value="Other sexually transmitted diseases" name="Question5"><br>
+        Drug/alcohol treatment or referral information <input type="checkbox" value="Drug/alcohol treatment or referral information" name="Question5"><br>
+        <p>If You selected the drug/alcohol treatment or referral information option, please comment below.</p>
+        <label for="drug_response">Per federal regulations, describe how much and what of Drug/Alcohol information Is to be disclosed:</label>
+        <input type="text" id="drug_response" name="drug_response"><br><br>
+
+     <h3>PART 6: Information to be released to</h3>
+        <p>MYSELF (select only one)</p>
+        <input type="radio" id="option_1" name="Question6" value="Mail my records to my address listed above">
+        <label for="option_1">Mail my records to my address listed above</label><br>
+        <input type="radio" id="option_2" name="Question6" value="Send records to my active MyHealth Account**">
+        <label for="option_2">Send records to my active MyHealth Account</label><br>
+        <input type="radio" id="option_3" name="Question6" value="Email records to my email address">
+        <label for="option_3">Email records to my email address</label>
+        <label for="user_email"></label>
+        <input type="text" id="user_email" name="user_email"><br><br>
+        <input type="radio" id="option_4" name="Question6" value="Or send my records to organization/person">
+        <label for="option_4">Or send my records to organization/person:</label>
+        <label for="end_name"></label>
+        <input type="text" id="end_relation" name="end_relation"><br>
+        <label for="end_relation">Relationship to Patient:</label>
+        <input type="text" id="end_name" name="end_name"><br>
+        <label for="end_address">Address:</label>
+        <input type="text" id="end_address" name="end_address"><br>
+        <label for="end_city">City:</label>
+        <input type="text" id="end_city" name="end_city">
+        <label for="end_state">State:</label>
+        <input type="text" id="end_state" name="end_state">
+        <label for="end_zip">Zip:</label>
+        <input type="text" id="end_zip" name="end_zip"><br>
+        <label for="end_phone">Phone:</label>
+        <input type="text" id="end_phone" name="end_phone"><br>
+        <label for="end_fax">Fax:</label>
+        <input type="text" id="end_fax" name="end_fax"><br>
+        <label for="end_email">Email records to:</label>
+        <input type="text" id="end_email" name="end_email"><br>
+
+     <h3>PART 7: Signature</h3>
+        <p>Is patient a minor (younger than 18 years of age)? If yes, please have a parent/guardian sign.</p>
+        <input type="radio" id="minor" name="Question7" value="Minor">
+        <label for="minor">Yes</label>
+        <input type="radio" id="not_minor" name="Question7" value="Adult">
+        <label for="not_minor">No</label><br>
+
+        <label for="signature_1">Signature of Patient or Patient’s Healthcare Representative (Required)</label>
+        <input type="text" id="signature_1" name="signature_1">
+        <label for="current_date_1">Date</label>
+        <input type="text" id="current_date_1" name="current_date_1"><br>
+        <label for="signature_2">Printed name of person signing this form (Required)</label>
+        <input type="text" id="signature_2" name="signature_2">
+        <label for="other_relationship">Relationship to patient (Required, could answer Self if both signatures are same)</label>
+        <input type="text" id="other_relationship" name="other_relationship"><br>
+        <label for="minor_signature">Minor patient (If applicable. Minors Signature required in addition if between the age of 13-17 years old)</label>
+        <input type="text" id="minor_signature" name="minor_signature"><br>
+        <label for="current_date_2">Date</label>
+        <input type="text" id="current_date_2" name="current_date_2"><br><br>
+
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+    </form>
+
+    <img src="../static/LegacyHealth_Info.png" alt="LegacyHealth_2" width="1000" height="1500" />
+
+</body>
+{% endblock %}

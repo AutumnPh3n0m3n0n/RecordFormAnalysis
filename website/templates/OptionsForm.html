@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+
+<body>
+        <form action="{{url_for('auth.login')}}" method="GET">
+                <button type="submit" class="btn btn-primary">Go Back To Log In</button>
+        </form>
+        <br><br>
+
+        <h2>Please Select A Form To Enter</h2> <br>
+
+        <form action="{{url_for('auth.bankaccountform')}}" method="POST">
+                <button type="submit" class="btn btn-primary">Bank Account Form</button>
+        </form>
+        <br>
+        <form action="{{url_for('auth.creditcardform')}}" method="POST">
+                <button type="submit" class="btn btn-primary">Credit Card Form</button>
+        </form>
+        <br>
+        <form action="{{url_for('auth.medicalrecordsform')}}" method="POST">
+                <button type="submit" class="btn btn-primary">Medical Records Form</button>
+        </form>
+        <br>
+        <form method='POST'></form>
+        <br>
+        </form>
+
+</body>
+{% endblock %}

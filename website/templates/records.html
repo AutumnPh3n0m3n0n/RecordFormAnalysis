@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+
+<body>
+    <a href="{{url_for('auth.login')}}" target="_blank">Go back to login screen</a> <br><br>
+    <a href="{{url_for('auth.forms')}}" target="_blank">Go back to forms page</a> <br><br>
+
+    <h3>Most Recent Credit Card Form</h3>
+    <ul>
+        {% if credit_item %}
+            <li>Last Updated: {{ credit_item.last_updated_ts }}</li>
+            <li>Name: {{ credit_item.first_name }}   {{ credit_item.last_name }}</li>
+            <li>Email: {{ credit_item.email }}</li>
+            <li>Account Number: {{ credit_item.account_number }}</li>
+            <li>Phone: {{ credit_item.phone }}</li>
+            <li>Payment Option: {{ credit_item.payment_option }}</li>
+            <li>Checking ACC / ABA: {{ credit_item.checking_acc_num }} - {{ credit_item.checking_aba_num }}</li>
+            <li>Savings ACC / ABA: {{ credit_item.savings_acc_num }} - {{ credit_item.savings_aba_num }}</li>
+        {% endif %}
+    </ul>
+    <br>
+
+    <h3>Most Recent Bank Account Form</h3>
+    <ul>
+        {% if bank_item %}
+            <li>Last Updated: {{ bank_item.last_updated_ts }}</li>
+            <li>Owner Name: {{ bank_item.owner_first_name }}  {{ bank_item.owner_last_name }}</li>
+            <li>Joint Owner Name: {{ bank_item.joint_owner_first_name }}  {{ bank_item.joint_owner_last_name }}</li>
+            <li>Total Net Worth: {{ bank_item.joint_owner_first_name }}</li>
+            <li>Liquid Net Worth: {{ bank_item.liquid_net_worth }}</li>
+            <li>Annual Income: {{ bank_item.total_net_worth }}</li>
+        {% endif %}
+    </ul>
+
+    <h3>Most Recent Medical Record Form</h3>
+    <ul>
+        {% if medical_item %}
+            <li>Last Updated: {{ medical_item.last_updated_ts }}</li>
+            <li>Name: {{ medical_item.first_name }}  {{ medical_item.last_name }}</li>
+            <li>Email: {{ medical_item.email }}</li>
+            <li>Phone: {{ medical_item.phone }}</li>
+            <li>Address: {{ medical_item.mailing_address }}</li>
+            <li>         {{ medical_item.city }} , {{ medical_item.state }} , {{ medical_item.zip }}</li>
+            <li>Location: {{ medical_item.location }}</li>
+            <li>Birthday: {{ medical_item.birthday }}</li>
+            <li>Last Appointment: {{ medical_item.last_appointment }}</li>
+            <li>Format: {{ medical_item.record_format }}</li>
+        {% endif %}
+    </ul>
+    <br>
+</body>
+{% endblock %}
