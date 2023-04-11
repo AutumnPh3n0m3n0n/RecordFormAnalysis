@@ -1,0 +1,21 @@
+CREATE TABLE `credit_card_form` (
+  `form_type` varchar(50) DEFAULT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `account_number` int NOT NULL AUTO_INCREMENT,
+  `phone` varchar(20) NOT NULL,
+  `payment_option` varchar(50) DEFAULT NULL,
+  `checking_acc_num` varchar(20) DEFAULT NULL,
+  `checking_aba_num` varchar(20) DEFAULT NULL,
+  `checking_start` varchar(20) DEFAULT NULL,
+  `savings_acc_num` varchar(20) DEFAULT NULL,
+  `savings_aba_num` varchar(20) DEFAULT NULL,
+  `savings_start` varchar(20) DEFAULT NULL,
+  `payment_amount` int DEFAULT NULL,
+  `signature` varchar(100) DEFAULT NULL,
+  `payment_date` varchar(20) DEFAULT NULL,
+  `auth_type` varchar(100) DEFAULT NULL,
+  `last_updated_ts` datetime DEFAULT NULL,
+  PRIMARY KEY (`account_number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
